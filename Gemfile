@@ -66,3 +66,6 @@ end
 
 gem "yt", git: "https://github.com/kangkyu/yt.git", branch: "include-player"
 gem "gslide", "~> 0.1"
+
+# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
+gem "tailwindcss-rails"
