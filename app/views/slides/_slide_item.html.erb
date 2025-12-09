@@ -1,20 +1,23 @@
-<%= turbo_stream_from "slide_#{slide.id}" %>
+<div style="display: none;"><%= turbo_stream_from "slide_#{slide.id}" %></div>
 
-<div id="slide_item_<%= slide.id %>" class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-sm">
-  <div class="flex justify-between items-start">
-    <div class="flex-1">
-      <p class="text-sm text-gray-500 mt-1">
-        Created <%= time_ago_in_words(slide.created_at) %> ago
+<div id="slide_item_<%= slide.id %>" class="border border-slate-200 rounded-lg p-4">
+  <div class="flex items-center justify-between mb-3">
+    <div>
+      <p class="text-sm text-slate-900 mb-1">
+        <% if slide.presentation_id.present? %>
+          <%= slide.presentation_id.truncate(20) %>
+        <% else %>
+          Slide
+        <% end %>
       </p>
-
-      <!-- TODO: Status indicator using helper -->
+      <p class="text-xs text-slate-500"><%= time_ago_in_words(slide.created_at) %> ago</p>
     </div>
+    <%= render "status_indicator", slide: slide %>
+  </div>
 
-    <div class="ml-4 flex space-x-2">
-      <%= link_to "View", slide_path(slide), class: "text-blue-600 hover:text-blue-800 text-sm" %>
-      <%= link_to "Delete", slide,
-        class: "text-red-600 hover:text-red-800 text-sm",
-        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    </div>
+  <div class="flex gap-2">
+    <%= link_to "View", slide_path(slide), class: "text-sm text-emerald-600 hover:text-emerald-700" %>
+    <%= link_to "Delete", slide, class: "text-sm text-red-600 hover:text-red-700",
+        data: { turbo_method: :delete, turbo_confirm: "Delete this slide?" } %>
   </div>
 </div>

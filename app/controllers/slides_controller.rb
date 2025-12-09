@@ -17,8 +17,7 @@ class SlidesController < ApplicationController
       redirect_to slide_url(@slide)
     else
       # TODO: maybe a flash message here
-      debugger
-      render "show", status: :unprocessable_content
+      render "new", status: :unprocessable_content
     end
   end
 

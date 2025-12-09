@@ -1,48 +1,34 @@
-<div class="bg-white">
+<div class="max-w-3xl mx-auto">
   <div class="mb-8">
-    <%= turbo_frame_tag "flash_messages" do %>
-      <%= render partial: "slides/error", locals: { error_message: "", status: @slide.status } %>
+    <%= link_to "← Back", slides_path, class: "text-slate-600 hover:text-slate-900" %>
+  </div>
+
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-semibold text-slate-900">Slide Details</h1>
+      <p class="text-sm text-slate-500 mt-1">Created <%= time_ago_in_words(@slide.created_at) %> ago</p>
+    </div>
+    <div id="status_indicator_<%= @slide.id %>">
+      <%= render "status_indicator", slide: @slide %>
+    </div>
+  </div>
+
+  <%= turbo_frame_tag "flash_messages" do %>
+    <%= render partial: "slides/error", locals: { error_message: "", status: @slide.status } %>
+  <% end %>
+
+  <div id="slide_<%= @slide.id %>" class="border border-slate-200 rounded-lg p-6">
+    <% if @slide.presentation_id.present? %>
+      <p class="text-sm text-slate-600 mb-6 font-mono"><%= @slide.presentation_id %></p>
     <% end %>
 
-    <!-- Header with navigation -->
-    <div class="flex items-center justify-between mb-6">
-      <div class="flex items-center space-x-4">
-        <%= link_to slides_path, class: "text-gray-500 hover:text-gray-700" do %>
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-          </svg>
-        <% end %>
-      </div>
+    <div id="content_status_<%= @slide.id %>">
+      <%= render "content_status", slide: @slide %>
     </div>
 
-
-    <!-- Main content card -->
-    <div id="slide_<%= @slide.id %>" class="bg-white border border-gray-200 rounded-lg shadow-sm">
-      <!-- Header section with status -->
-      <div class="px-6 py-4 border-b border-gray-200">
-        <div class="flex items-center justify-between">
-          <div>
-            <p class="text-sm text-gray-500 mt-1">
-              Created <%= time_ago_in_words(@slide.created_at) %> ago
-            </p>
-          </div>
-
-          <!-- Status indicator -->
-          <div id="status_indicator_<%= @slide.id %>">
-            <%= render "status_indicator", slide: @slide %>
-          </div>
-        </div>
-      </div>
-
-      <!-- Content section -->
-      <div class="px-6 py-8">
-        <div class="text-center space-y-6">
-
-          <div id="content_status_<%= @slide.id %>">
-            <%= render "content_status", slide: @slide %>
-          </div>
-        </div>
-      </div>
+    <div class="mt-6 pt-6 border-t border-slate-200">
+      <%= link_to "Delete", @slide, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Delete this slide?" },
+          class: "text-sm text-red-600 hover:text-red-700" %>
     </div>
   </div>
 </div>

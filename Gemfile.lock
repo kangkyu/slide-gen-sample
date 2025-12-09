@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/kangkyu/yt.git
-  revision: d6ef840470c4c1f4e648b9abf1a002bc9bddcc64
-  branch: include-player
+  remote: https://github.com/nullscreen/yt.git
+  revision: b93bef299c89559d1cb15b4ef153bf69ca73c221
+  branch: master
   specs:
     yt (0.34.0)
       activesupport

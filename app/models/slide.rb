@@ -43,7 +43,6 @@ class Slide < ApplicationRecord
   private
 
   def fetch_youtube
-    # @youtube_data
     self.data = data_fashion.fetch_data
   end
 

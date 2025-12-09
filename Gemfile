@@ -64,7 +64,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "yt", git: "https://github.com/kangkyu/yt.git", branch: "include-player"
+gem "yt", git: "https://github.com/nullscreen/yt.git", branch: "master"
 gem "gslide", "~> 0.1"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]

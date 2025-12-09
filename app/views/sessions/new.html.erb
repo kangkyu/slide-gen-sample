@@ -1,15 +1,13 @@
-<div class="bg-gray-50 w-full">
-  <div class="py-20 bg-white border-4 border-emerald-600">
-    <div class="px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <%= button_to google_auth_url,
-            method: :post,
-            data: { turbo: false },
-            class: "inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-lg border-2 border-gray-600 hover:bg-gray-50 transition duration-300 shadow-sm" do %>
-          <%= image_tag "google_logo.png", class: "w-5 h-5 mr-2", alt: "Google logo" %>
-          <span class="font-semibold">Sign in with Google</span>
-        <% end %>
-      </div>
-    </div>
+<div class="flex items-center justify-center min-h-[calc(100vh-16rem)]">
+  <div class="w-full max-w-sm">
+    <h1 class="text-2xl font-semibold text-slate-900 mb-8 text-center">Sign in</h1>
+
+    <%= button_to google_auth_url,
+        method: :post,
+        data: { turbo: false },
+        class: "w-full flex items-center justify-center px-4 py-3 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors" do %>
+      <%= image_tag "google_logo.png", class: "w-5 h-5 mr-3", alt: "Google" %>
+      <span class="text-slate-700">Continue with Google</span>
+    <% end %>
   </div>
 </div>

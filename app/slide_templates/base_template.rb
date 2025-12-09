@@ -37,9 +37,13 @@ class BaseTemplate
     possible_chars.sample(length).join
   end
 
+  def content_x
+    656
+  end
+
   # left and right margin
   def margin_x
-    32  # 32 + 896 + 32 = 960 points / 13.33 inches wide
+    32  # 32 + 656 + 32 = 720 points / 10 inches wide
   end
 
   # top margin
