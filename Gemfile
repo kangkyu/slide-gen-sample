@@ -71,3 +71,5 @@ gem "gslide", "~> 0.1"
 gem "tailwindcss-rails"
 
 gem "omniauth-google-oauth2", "~> 1.2"
+
+gem "openssl", "~> 3.3"
