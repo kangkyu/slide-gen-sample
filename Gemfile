@@ -69,3 +69,5 @@ gem "gslide", "~> 0.1"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
+
+gem "omniauth-google-oauth2", "~> 1.2"

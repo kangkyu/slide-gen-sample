@@ -1,0 +1,28 @@
+<%= turbo_stream.update "slide_#{@slide.id}" do %>
+  <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-8 text-center">
+    <!-- Success icon -->
+    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+      <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+
+    <!-- Success message -->
+    <h3 class="text-lg font-semibold text-gray-900 mb-2">Successfully Deleted</h3>
+    <p class="text-gray-600 mb-6">
+      <strong>The slide "<%= @slide.id %>"</strong> has been permanently deleted.
+    </p>
+
+    <!-- Action button -->
+    <%= link_to slides_path,
+        class: "inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200" do %>
+      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+      </svg>
+      Back to Slide List
+    <% end %>
+  </div>
+<% end %>
+
+<%= turbo_stream.remove "delete_button_#{@slide.id}" %>
+<%= turbo_stream.remove "slide_item_#{@slide.id}" %>
