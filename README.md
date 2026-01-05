@@ -1,24 +1,19 @@
 # slide-gen-sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fetch data from YouTube API data, and automatically generate Google
+Slides file with it, for a use case of both API in Ruby (use `yt`
+gem and `gslide` gem).
 
-Things you may want to cover:
+```sh
+bin/rails server
+```
 
-* Ruby version
+- Environment variables
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Get these from Google Cloud [Console](https://console.cloud.google.com/apis/dashboard)
+(client id, client secret, and api key).
+```
+export YT_CLIENT_ID='...'
+export YT_CLIENT_SECRET='...'
+export YT_API_KEY='...'
+```
