@@ -241,7 +241,7 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
-    openssl (3.3.2)
+    openssl (4.0.0)
     ostruct (0.6.3)
     parallel (1.27.0)
     parser (3.3.10.0)
@@ -439,7 +439,7 @@ DEPENDENCIES
   kamal
   minitest (~> 5.0)
   omniauth-google-oauth2 (~> 1.2)
-  openssl (~> 3.3)
+  openssl (~> 4.0)
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

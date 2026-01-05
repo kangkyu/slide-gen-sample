@@ -74,4 +74,4 @@ gem "tailwindcss-rails"
 
 gem "omniauth-google-oauth2", "~> 1.2"
 
-gem "openssl", "~> 3.3"
+gem "openssl", "~> 4.0"
