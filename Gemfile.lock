@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/nullscreen/yt.git
-  revision: b93bef299c89559d1cb15b4ef153bf69ca73c221
+  revision: cd94665d2c2f950ac0eb0fbe86190ddd3a7e507b
   branch: master
   specs:
-    yt (0.34.0)
+    yt (0.34.1)
       activesupport
 
 GEM
